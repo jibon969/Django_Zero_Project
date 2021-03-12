@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     # Custom Apps
     'django_server_access_logs.apps.DjangoServerAccessLogsConfig',  # Server Access Logging apps
     'home.apps.HomeConfig',
-
+    'contacts',
+    'dynamic_slider.apps.DynamicSliderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

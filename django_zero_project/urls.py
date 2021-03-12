@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('', include('contacts.urls')),
+    path('', include('dynamic_slider.urls')),
 ]
 
 if settings.DEBUG:

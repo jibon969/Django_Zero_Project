@@ -17,12 +17,27 @@
     <!----- Header or nav ------>
     {% include 'base/nav.html' %}
 
+    <div class='container-fluid p-0'>
+        {% if messages %}
+            <div class="alert alert-success messages alert-dismissable text-center">
+                {% for message in messages %}
+                    <button type="button" {% if message.tags %} class="{{ message.tags }} close"{% endif %} data-dismiss="alert" aria-hidden="true">
+                        &times;
+                    </button>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}<br/>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Body Content -->
     {% block content %}
 
 
 
-
-    {% endblock content %}
+    {% endblock %}
+    <!--- End Body Content -->
 
 
 
