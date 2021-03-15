@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'contacts',
     'dynamic_slider.apps.DynamicSliderConfig',
+    'search_autocomplete.apps.SearchAutocompleteConfig',
+    # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
