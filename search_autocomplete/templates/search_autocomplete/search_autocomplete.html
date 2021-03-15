@@ -1,21 +1,20 @@
 {% load static %}
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Zero Project{% endblock title %}</title>
-    <!-- Include all css file -->
+    <title>Auto Search</title>
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'font/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
 
 </head>
-
 <body>
 
     <!-- Navigation -->
@@ -75,16 +74,36 @@
         {% endif %}
     </div>
 
-    <!-- Body Content -->
-    {% block content %}
-
-
-
-    {% endblock %}
-    <!--- End Body Content -->
-
+   <div class="container my-5">
+       <div class="row">
+           <div class="col">
+               <div class="card">
+                   <h4 class="card-header text-center">How to auto search </h4>
+                   <div class="ard-body">
+                       <form action="#" method="GET">
+                           <input type="text" class="form-control" id="tags">
+                           <button type="submit" class="btn btn-primary my-3">Submit</button>
+                       </form>
+                   </div>
+               </div>
+               <script>
+                  $( function() {
+                    var availableTags = [
+                        {% for language in languages %}
+                            "{{language.name}} {{ languages.price }}",
+                        {% endfor %}
+                    ];
+                    $( "#tags" ).autocomplete({
+                      source: availableTags
+                    });
+                  } );
+              </script>
+           </div>
+       </div>
+   </div>
 
     <!--- Footer ----------->
+    <div style="margin-top: 100px"></div>
     <section id="main-footer">
         <footer class="text-center p-4">
             <div class="container">
@@ -97,15 +116,6 @@
         </footer>
     </section>
 
-    <!--JavaScript Library-->
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-
-    {% block javascript %}
-
-    {% endblock javascript %}
 
 </body>
-
 </html>

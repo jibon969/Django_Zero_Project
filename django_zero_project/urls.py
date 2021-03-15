@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('contacts.urls')),
     path('', include('dynamic_slider.urls')),
+    path('', include('search_autocomplete.urls')),
 ]
 
 if settings.DEBUG:
