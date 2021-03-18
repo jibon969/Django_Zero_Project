@@ -90,7 +90,9 @@
                   $( function() {
                     var availableTags = [
                         {% for language in languages %}
-                            "{{language.name}} {{ languages.price }}",
+                            "{{language.name}}",
+                            "{{language.price}}",
+                            "{{language.image.name}}",
                         {% endfor %}
                     ];
                     $( "#tags" ).autocomplete({
