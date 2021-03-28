@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'contacts',
     'dynamic_slider.apps.DynamicSliderConfig',
     'search_autocomplete.apps.SearchAutocompleteConfig',
+    'django_form.apps.DjangoFormConfig',
     # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',
