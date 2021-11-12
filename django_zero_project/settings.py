@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'dynamic_slider.apps.DynamicSliderConfig',
     'search_autocomplete.apps.SearchAutocompleteConfig',
     'django_form.apps.DjangoFormConfig',
+    'csv_file.apps.CsvFileConfig',
     # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',
