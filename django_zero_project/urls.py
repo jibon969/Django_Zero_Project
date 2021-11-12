@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('contacts.urls')),
     path('', include('dynamic_slider.urls')),
     path('', include('search_autocomplete.urls')),
+    path('', include('csv_file.urls')),
 ]
 
 if settings.DEBUG:
