@@ -36,7 +36,7 @@ class Product(models.Model):
     update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.id
+        return self.title
 
     class Meta:
         ordering = ['-timestamp']
