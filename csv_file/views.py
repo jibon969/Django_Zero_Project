@@ -39,6 +39,11 @@ def product_list(request):
 
 
 def download_product_csv(request):
+    """
+    This function based view work download product csv file
+    :param request: http://127.0.0.1:8000/download-product-csv
+    :return: product.csv
+    """
     # queryset = Product.objects.all().values_list('title', 'brand')
     queryset = Product.objects.all()
     response = HttpResponse(content_type="text/csv")
