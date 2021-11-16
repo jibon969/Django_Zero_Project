@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('dynamic_slider.urls')),
     path('', include('search_autocomplete.urls')),
     path('', include('csv_file.urls')),
+    path('', include('dashboard.urls')),
 ]
 
 if settings.DEBUG:
