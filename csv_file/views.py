@@ -1,5 +1,6 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Product
 import csv
@@ -59,3 +60,32 @@ def download_product_csv(request):
         writer.writerow(row[:])
     response['Content-Disposition'] = 'attachment; filename="product.csv"'
     return response
+
+
+def product_download_by_date_csv(request):
+    """
+    This function based view work for download csv file ordering Date --> from & to
+    :param request:
+    :return:
+    """
+    try:
+        if request.method == "POST":
+            start_date = request.POST.get('start-date')
+            end_date = request.POST.get('end-date', None)
+            queryset = Product.objects.product_by_date(start_date, end_date)
+            response = HttpResponse(content_type='text/csv')
+            writer = csv.writer(response)
+            writer.writerow([
+                'Title', 'Brand', 'Image', 'Price', 'Old Price'
+            ])
+            for q in queryset:
+                row = []
+                row.extend([
+                    q.title, q.brand.title, q.image, q.price, q.old_price
+                ])
+                writer.writerow(row[:])
+            response['Content-Disposition'] = 'attachment; filename="product-by-date.csv"'
+            return response
+    except:
+        messages.add_message(request, messages.SUCCESS, "Oops you forgot select start date to end date.")
+        return redirect('product-list')
