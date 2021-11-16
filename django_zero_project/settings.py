@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'search_autocomplete.apps.SearchAutocompleteConfig',
     'django_form.apps.DjangoFormConfig',
     'csv_file.apps.CsvFileConfig',
+    'dashboard.apps.DashboardConfig',
     # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',

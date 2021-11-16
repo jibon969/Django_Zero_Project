@@ -1,0 +1,24 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load static %}
+{% block title %} Dashboard {% endblock title %}
+
+{% block content %}
+
+  <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item text-center">
+          <a href="{% url 'dashboard' %}" class="text-center">Welcome to Zero Project</a>
+      </li>
+    </ol>
+    <div class="row">
+        <!-- Contact List --->
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-4">
+            <a href="#" class="btn btn-outline-info btn-block btn-lg">App name</a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock  %}
