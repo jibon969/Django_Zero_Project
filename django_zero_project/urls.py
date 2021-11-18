@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('search_autocomplete.urls')),
     path('', include('csv_file.urls')),
     path('', include('dashboard.urls')),
+    path('', include('auto_complete_search.urls')),
 ]
 
 if settings.DEBUG:

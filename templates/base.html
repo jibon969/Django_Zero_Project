@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'font/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Dropdown select -->
+    <link rel="stylesheet" href="{% static 'dropdown_select/css/selectize.bootstrap3.min.css' %}" crossorigin="anonymous" />
+    <!-- Block css -->
+
+    {% block css %}
+
+    {% endblock css %}
 
 </head>
 
@@ -88,7 +95,7 @@
 
 
     <!-- Footer -->
-    <section id="main-footer" style="position:fixed;right:0;bottom:0;left:0;z-index:1030 !important;">
+    <section id="main-footer">
         <footer class="text-center p-3">
             <div class="container">
                 <div class="row">
@@ -104,10 +111,21 @@
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Selectize jQuery -->
+    <script src="{% static 'dropdown_select/js/selectize.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').selectize({
+                sortField: 'text'
+            });
+        });
+    </script>
 
     {% block javascript %}
 
     {% endblock javascript %}
+
+
 
 </body>
 

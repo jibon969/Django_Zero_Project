@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Auto Complete {% endblock title %}
+
+{% block css %}
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/css/autoComplete.min.css">
+{% endblock css %}
+
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="autocomplete" class="autocomplete">
+                    <input class="autocomplete-input" />
+                    <ul class="autocomplete-result-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+    <script>
+        new Autocomplate('#autocomplete',{
+            search : input =>{
+                const url ='/search/?address'=${input}
+        }
+        })
+    </script>
+
+{% endblock javascript %}
