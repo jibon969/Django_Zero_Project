@@ -12,6 +12,10 @@
             <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&amp;display=swap" rel="stylesheet">
             <link href="{% static 'dashboard/css/styles.css' %}" rel="stylesheet">
             <link rel="stylesheet" href="{% static 'dashboard/bootstrap/bootstrap.min.css' %}">
+            <!-- Dropdown select -->
+            <link rel="stylesheet" href="{% static 'dropdown_select/css/selectize.bootstrap3.min.css' %}" crossorigin="anonymous" />
+            <!-- Block css -->
+
         </head>
         <body class="sb-nav-fixed">
 
@@ -146,6 +150,15 @@
             <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
             <script src="{% static 'dashboard/js/all.min.js' %}" crossorigin="anonymous"></script>
             <script src="{% static 'dashboard/js/scripts.js' %}"></script>
+            <!-- Selectize jQuery -->
+            <script src="{% static 'dropdown_select/js/selectize.min.js' %}"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('select').selectize({
+                        sortField: 'text'
+                    });
+                });
+            </script>
         </body>
     </html>
 {% endspaceless %}

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_form.apps.DjangoFormConfig',
     'csv_file.apps.CsvFileConfig',
     'dashboard.apps.DashboardConfig',
+    'auto_complete_search.apps.AutoCompleteSearchConfig',
     # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',
