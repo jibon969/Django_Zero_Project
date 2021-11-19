@@ -1,0 +1,49 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_field %}
+{% block title %} Replay Form {% endblock %}
+
+{% block content %}
+
+    <section id="contactSection">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="text-center">
+                        <h4 class="text-center">
+                            <a href="#">Replay Form</a>
+                            <span class="text-danger mx-2">||</span>
+                            <a href="{% url 'contact-list' %}">Back to contact</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-5">
+                    <div class="card">
+                        <h5 class="card-header text-center">Replay Form</h5>
+                        <div class="card-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <p><span class="text-info font-weight-bold">Message :</span> {{ contact.message }}</p>
+                                <div class="form-row">
+                                    <div class="col">
+                                        {{ form.replay|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        {{ form.message|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <button class="btn btn-info btn-block">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
