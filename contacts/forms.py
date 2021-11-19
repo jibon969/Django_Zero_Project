@@ -1,6 +1,7 @@
 import re
 from django import forms
-from .models import Contact
+from django.forms import Textarea
+from .models import Contact, ReplayContact
 
 EMAIL_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
@@ -15,6 +16,11 @@ class ContactForm(forms.ModelForm):
             'email',
             'message',
         ]
+    
+        # Override the Customer some fields
+        widgets = {
+            'message': Textarea(attrs={'rows': 3, 'cols': 3}),
+        }
 
     # Validation
     def clean_name(self):
@@ -34,5 +40,14 @@ class ContactForm(forms.ModelForm):
         return email
 
 
-
-
+class ReplayContactForm(forms.ModelForm):
+    class Meta:
+        model = ReplayContact
+        fields = [
+            'replay',
+            'message',
+        ]
+        # Override the Customer some fields
+        widgets = {
+            'message': Textarea(attrs={'rows': 4, 'cols': 4 }),
+        }

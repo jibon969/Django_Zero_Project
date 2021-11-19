@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us | Belasea - A home for authentic beauty products in Bangladesh {% endblock %}
+
+{% block content %}
+
+    <!-- Contact Us Section -->
+    <section id="contactUs">
+        <div class="container-fluid">
+            <h3 class="contact_title pt-3">Contact Us</h3>
+            <div class="row">
+                <!-- Contact Form --->
+                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pt-1">
+                    <div class="full_contact">
+                        {% if errors %}
+                            {{ errors }}
+                        {% endif %}
+                        <form id="contact-form" method="post"  role="form">
+                            {% csrf_token %}
+                            <div class="control">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_subject" type="text" name="subject" class="form-control" required="required" data-error="Subject is required." placeholder="Subject *">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Full Name --->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_fullname" type="text" name="name" class="form-control" required="required" data-error="Fullname is required." placeholder="Full name *">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---- Email --->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_email" type="email" name="email" class="form-control"  required="required" data-error="Valid email is required." placeholder="E-mail *">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <!---- Phone ------>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone *">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Message -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea id="form_message" name="message" class="form-control" placeholder="Write your message *" rows="8" required="required" data-error="Please, leave us a message"></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-primary btn-send" value="Send message">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Location -->
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 pl-4">
+                    <div id="full_address">
+                        <div class="address">
+                            <h5 class="address_top">Address</h5>
+                            <ul class="list-unstyled">
+                                <li>Eastern Kamalapur Complex</li>
+                                <li>64-68 North Kamlapur</li>
+                                <li>2nd Floor, room 218</li>
+                                <li>Motijheel, Dhaka-1000</li>
+                                <li>Bangladesh</li>
+                            </ul>
+                        </div>
+                        <!-- Phone -->
+                        <div class="phone">
+                            <h5>Phone</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <i class="fa fa-phone pr-3" aria-hidden="true"></i>+88 01305-606540
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Email -->
+                        <div class="email">
+                            <h5>E-mail</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-envelope pr-3" aria-hidden="true"></i>help.belasea@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Us Form -->
+
+    <!-- Google Map -->
+    <section id="google_map">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="google_map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.4521028732247!2d90.42527631018355!3d23.73125221362765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x47fc03bc903dfe0!2sEastern+Commercial+Complex!5e0!3m2!1sen!2sbd!4v1564505983152!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:2px solid #ffff" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Google -->
+
+{% endblock content %}
+

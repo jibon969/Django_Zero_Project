@@ -12,6 +12,26 @@ class Contact(models.Model):
     phone = models.CharField(validators=[phone_regex], max_length=15, blank=True)
     email = models.EmailField()
     message = models.TextField()
+    is_message_send = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.email
+
+
+class ReplayContact(models.Model):
+    replay = models.OneToOneField(Contact, on_delete=models.CASCADE, blank=True, null=True)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+
+
+
