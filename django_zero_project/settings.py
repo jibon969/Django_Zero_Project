@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'csv_file.apps.CsvFileConfig',
     'dashboard.apps.DashboardConfig',
     'auto_complete_search.apps.AutoCompleteSearchConfig',
+    'server_side_processing.apps.ServerSideProcessingConfig',
     # Default Apps
     'django.contrib.admin',
     'django.contrib.auth',
