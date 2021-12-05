@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable</title>
+    <!---- Css Library added -->
+    <link rel="stylesheet" href="{% static 'datatables/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'datatables/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'datatables/css/buttons.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'datatables/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'datatables/font/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'datatables/css/style.css' %}">
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="topSection">
+                    <h2 class="text-center text-justify mt-2">
+                        <a href="#">Back to Dashboard</a>
+                    </h2>
+                    <h5 class="font-weight-bold text-justify text-center">
+                        <a href="#" class="text-black-50">Table Name</a>
+                    </h5>
+                </div>
+                <div class="addedNewItem">
+                    <a href="#" class="btn bg-primary text-white my-2">Add new item</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive">
+                    <table id="datatables_jibon" class="table table-striped table-bordered dt-responsive nowrap">
+                        <thead class="bg-dark text-white">
+                            <tr class="text-center">
+                                <th scope="col">ID</th>
+                                <th scope="col">First name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Position</th>
+                                <th scope="col">Office</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Start date</th>
+                                <th scope="col">Salary</th>
+                                <th scope="col">Extn</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!---------- Data table Library ----------->
+    <script src="{% static 'datatables/js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'datatables/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'datatables/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'datatables/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'datatables/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'datatables/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'datatables/js/jszip.min.js' %}"></script>
+    <script src="{% static 'datatables/js/buttons.html5.min.js' %}"></script>
+
+    <!----- Javascript Code ------>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#datatables_jibon').DataTable({
+                responsive: true,
+                searching: true,
+                pagingType: "full_numbers",
+                ordering: false,
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'csv',],
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "scrollY": 400,
+                "scrollX": true,
+            });
+
+            table.buttons().container()
+                .appendTo('#datatables_jibon_wrapper .col-md-6:eq(0)');
+
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>
