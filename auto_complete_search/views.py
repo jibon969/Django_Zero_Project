@@ -3,7 +3,6 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.core.cache import cache
-
 from faker import Faker
 fake = Faker()
 from . models import *
